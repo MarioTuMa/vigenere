@@ -14,7 +14,7 @@ for char in alphabet:
     count+=1
 
 def decode(letter,key,method):
-    if(method == "decode"):
+    if method == "decode":
         return alphabet[(dict[char]-dict[key])%26]
     else:
         return alphabet[(dict[char]+dict[key])%26]
