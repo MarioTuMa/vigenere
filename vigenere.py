@@ -2,8 +2,8 @@ import sys
 args = sys.argv
 
 method = args[1]
-msg = args[2]
-key = args[3]
+msg = args[2].lower()
+key = args[3].lower()
 
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
 dict = {}
@@ -22,7 +22,7 @@ def decode(letter,key,method):
 charcount = 0
 mod = len(key)
 decoded = ""
-for char in msg.lower():
-    decoded += decode(msg,key[charcount%mod],method)
+for char in msg:
+    decoded += decode(char,key[charcount%mod],method)
     charcount += 1
 print(decoded)
